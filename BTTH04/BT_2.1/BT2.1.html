@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Form Đăng Ký</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    padding:30px;
+}
+
+form{
+    width:350px;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    display:none;
+}
+
+.success{
+    border:2px solid green;
+}
+
+.invalid{
+    border:2px solid red;
+}
+
+.success-box{
+    display:none;
+    padding:20px;
+    background:#e8ffe8;
+    border:1px solid green;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>Đăng Ký Tài Khoản</h2>
+
+<form id="registerForm">
+
+<label>Họ và tên</label>
+<input type="text" id="fullname">
+<span class="error" id="fullnameError"></span>
+
+<br><br>
+
+<label>Email</label>
+<input type="text" id="email">
+<span class="error" id="emailError"></span>
+
+<br><br>
+
+<label>Số điện thoại</label>
+<input type="text" id="phone">
+<span class="error" id="phoneError"></span>
+
+<br><br>
+
+<label>Mật khẩu</label>
+<input type="password" id="password">
+<span class="error" id="passwordError"></span>
+
+<br><br>
+
+<label>Xác nhận mật khẩu</label>
+<input type="password" id="confirmPassword">
+<span class="error" id="confirmPasswordError"></span>
+
+<br><br>
+
+<label>Giới tính</label><br>
+
+<input type="radio" name="gender" value="Nam"> Nam
+<input type="radio" name="gender" value="Nữ"> Nữ
+
+<br>
+<span class="error" id="genderError"></span>
+
+<br><br>
+
+<label>
+<input type="checkbox" id="terms">
+ Tôi đồng ý với điều khoản
+</label>
+
+<br>
+<span class="error" id="termsError"></span>
+
+<br><br>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<div class="success-box" id="successBox">
+<h3>Đăng ký thành công! 🎉</h3>
+<p>Chào mừng <span id="userName"></span></p>
+</div>
+
+<script src="BT2.1.js"></script>
+
+</body>
+</html>

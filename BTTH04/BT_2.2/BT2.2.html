@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Form Đặt Hàng</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    padding:30px;
+}
+
+form{
+    width:420px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+textarea{
+    height:80px;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    display:none;
+}
+
+.invalid{
+    border:2px solid red;
+}
+
+.success{
+    border:2px solid green;
+}
+
+.counter{
+    font-size:13px;
+    text-align:right;
+}
+
+.counter.limit{
+    color:red;
+}
+
+.summary{
+    display:none;
+    border:1px solid #999;
+    padding:15px;
+    margin-top:20px;
+    background:#f5f5f5;
+}
+
+.success-box{
+    display:none;
+    background:#e8ffe8;
+    border:1px solid green;
+    padding:20px;
+    margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Đặt Hàng</h2>
+
+<form id="orderForm">
+
+<label>Tên sản phẩm</label>
+<select id="product">
+<option value="">-- Chọn sản phẩm --</option>
+<option value="laptop">Laptop</option>
+<option value="phone">Điện thoại</option>
+<option value="headphone">Tai nghe</option>
+</select>
+<span class="error" id="productError"></span>
+
+<br><br>
+
+<label>Số lượng</label>
+<input type="number" id="quantity">
+<span class="error" id="quantityError"></span>
+
+<br><br>
+
+<label>Ngày giao hàng</label>
+<input type="date" id="deliveryDate">
+<span class="error" id="dateError"></span>
+
+<br><br>
+
+<label>Địa chỉ giao</label>
+<input type="text" id="address">
+<span class="error" id="addressError"></span>
+
+<br><br>
+
+<label>Ghi chú</label>
+<textarea id="note"></textarea>
+<div class="counter" id="noteCounter">0/200</div>
+<span class="error" id="noteError"></span>
+
+<br><br>
+
+<label>Thanh toán</label><br>
+
+<input type="radio" name="payment" value="COD"> COD  
+<input type="radio" name="payment" value="Bank"> Chuyển khoản  
+<input type="radio" name="payment" value="Wallet"> Ví điện tử  
+
+<br>
+<span class="error" id="paymentError"></span>
+
+<br><br>
+
+<h3>Tổng tiền: <span id="totalPrice">0</span> VNĐ</h3>
+
+<button type="submit">Đặt hàng</button>
+
+</form>
+
+<div class="summary" id="orderSummary">
+<h3>Xác nhận đơn hàng</h3>
+
+<p>Sản phẩm: <span id="sumProduct"></span></p>
+<p>Số lượng: <span id="sumQuantity"></span></p>
+<p>Tổng tiền: <span id="sumPrice"></span></p>
+<p>Ngày giao: <span id="sumDate"></span></p>
+
+<button id="confirmBtn">Xác nhận</button>
+<button id="cancelBtn">Hủy</button>
+</div>
+
+<div class="success-box" id="successBox">
+<h3>Đặt hàng thành công 🎉</h3>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
