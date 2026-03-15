@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Form Đăng Ký</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    padding:30px;
+}
+
+form{
+    width:350px;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    display:none;
+}
+
+.invalid{
+    border:2px solid red;
+}
+
+.success{
+    border:2px solid green;
+}
+
+.counter{
+    font-size:12px;
+    text-align:right;
+}
+
+.password-wrapper{
+    position:relative;
+}
+
+.toggle{
+    position:absolute;
+    right:10px;
+    top:8px;
+    cursor:pointer;
+}
+
+.strength-bar{
+    height:6px;
+    background:#ddd;
+    margin-top:5px;
+}
+
+.strength-fill{
+    height:6px;
+    width:0%;
+}
+
+.weak{
+    background:red;
+}
+
+.medium{
+    background:orange;
+}
+
+.strong{
+    background:green;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Đăng Ký</h2>
+
+<form id="registerForm">
+
+<label>Họ và tên</label>
+<input type="text" id="fullname" maxlength="50">
+<div class="counter" id="nameCounter">0/50</div>
+<span class="error" id="fullnameError"></span>
+
+<br><br>
+
+<label>Email</label>
+<input type="text" id="email">
+<span class="error" id="emailError"></span>
+
+<br><br>
+
+<label>Mật khẩu</label>
+
+<div class="password-wrapper">
+<input type="password" id="password">
+<span class="toggle" id="togglePass">👁</span>
+</div>
+
+<div class="strength-bar">
+<div id="strengthFill" class="strength-fill"></div>
+</div>
+
+<span class="error" id="passwordError"></span>
+
+<br><br>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<div id="successBox" style="display:none;margin-top:20px;">
+<h3>Đăng ký thành công 🎉</h3>
+<p>Chào <span id="userName"></span></p>
+</div>
+
+<script src="btvn1.js"></script>
+
+</body>
+</html>
